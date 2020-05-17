@@ -1,0 +1,17 @@
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+node_modules/
+dist
+package-lock.json
+.DS_Store
+.AppleDouble
+npm-debug.log
+.LSOverride
+.idea
+.vscode
+*.lnk
+Desktop.ini
+Thumbs.db
+ehthumbs.db

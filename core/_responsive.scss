@@ -1,0 +1,24 @@
+// Obtiene un breakpoint del core
+@function getBreakpoint($bp){
+  @return map-get($breakpoints,$bp);
+}
+
+// Se aplica "A partir" de la medida del breakpoint
+@mixin from($from){
+  @if $from == s {
+    @content
+  }
+  @else {
+    @media screen and (min-width: getBreakpoint($from)){ @content }
+  }
+}
+
+// Se aplica "Hasta" la medida del brekpoint
+@mixin to($to){
+  @if $to == s {
+    @content
+  }
+  @else {
+    @media screen and (max-width: getBreakpoint($to) - 1px) { @content }
+  }
+}

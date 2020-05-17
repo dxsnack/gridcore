@@ -1,0 +1,37 @@
+/**
+  GridCore es una librería SASS para construir layouts con RWD.
+  Autor: Alexis Eduardo Miranda Crespo.
+**/
+
+
+// Permite modificar el nombre de las clases usadas como row y column.
+  $row: row !default;
+  $column: column !default;
+
+// Ancho máximo para los contenedores
+  $max-width: 1200px !default;
+
+// Seperación horizontal entre items
+  $gutter: 1rem !default;
+
+// Breakpoints
+  $breakpoints : (
+    s: 0,
+    m: 640px,
+    l: 1024px,
+  ) !default;
+  $sizes: map-keys($breakpoints);
+
+// Fracciones para calcular anchos de los items
+  $fractions: 3 !default;
+
+// Importando del core
+  @import "core/responsive";      // mixins from(), to()
+  @import "core/base";            // estilos base
+  @import "core/core";            // row y columns
+  @import "core/visibility";      // mixins para visibilidad
+  @import "core/layout";          // Agrega clases para margenes y paddings
+  @import "core/flexbox";         // utilidades con flexbox
+  @import "core/buttons";         // botones
+  @import "core/helpers";         // utilidades
+

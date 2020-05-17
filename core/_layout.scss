@@ -1,0 +1,55 @@
+// Creando margenes
+@for $i from 0 through 5 {
+  // Unidad de separación actual
+  $unit: 0.5rem * $i;
+
+  // Valida el cero para evitar devolver 0rem como unidad
+  @if $i == 0 {
+    $unit: 0;
+  }
+
+  // Margin right
+  .mr-#{$i} {
+    margin-right: $unit;
+  }
+
+  // Margin bottom
+  .mb-#{$i} {
+    margin-bottom: $unit;
+  }
+
+  // Margin top
+  .mt-#{$i} {
+    margin-top: $unit * -1;
+  }
+
+  // Margin left
+  .ml-#{$i} {
+    margin-left: $unit;
+  }
+}
+
+// Utiliza el 100% dependiendo del breakpoint 
+@mixin full() {
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.full {
+  @include full;
+}
+
+@include to(m) {
+  .full-to-m {
+    @include full;
+  }
+}
+
+@include to(l) {
+  .full-to-l {
+    @include full;
+  }
+}

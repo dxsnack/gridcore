@@ -1,0 +1,43 @@
+
+// Este mixin solo es para resetear y poner estilos bases
+// solo faltaria aplicar colores y tamaños personalizados.
+//
+// .button {
+//   @include button();
+//   background-color: steelblue; 
+//   color: #fff;
+//   border-radius: 5px;
+// }
+
+@mixin button() {
+  display: inline-block;
+  line-height: 1.5;
+  padding: .85em 2em;
+  cursor: pointer;
+  margin-bottom: 1em;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  font-weight: bold;
+  font-family: inherit;
+  user-select: none;
+  white-space: nowrap;
+  background: #efefef;
+
+  &:hover {    
+    text-decoration: none;
+  }
+
+  &:active {
+    transform : scale(.96);
+  }
+
+  &:disabled,
+  &.disabled {
+      cursor: not-allowed;
+      filter: alpha(opacity=65);
+      box-shadow: none;
+      opacity: .65;
+  }
+}

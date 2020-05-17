@@ -1,0 +1,42 @@
+// Crea un row o container para el contenido
+.#{$row} {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+// crea una columna padre al 100%
+.#{$column} {
+  margin: 0;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  width: 100%;
+  
+  // un column a la vez puede ser row
+  // para evitar anidaciones innecesarias
+  &.#{$row}{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Breakpoints
+@each $size in $sizes{
+  @include from($size) {
+    @for $i from 1 through 20 {
+      .#{$column}.#{$size}-#{$i*5} {
+        width: $i * 5%;
+      }
+    }
+    @each $fraction in $fractions {
+      @for $i from 1 through $fraction {
+        .#{$column}.#{$size}-#{$i}-#{$fraction} {
+          width: (100% / $fraction) * $i
+        }
+      }
+    }
+  }
+}
