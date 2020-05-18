@@ -25,6 +25,9 @@
 // Fracciones para calcular anchos de los items
   $fractions: 3 !default;
 
+// Normalize
+  @import "core/normalize";       // Normalize
+
 // Importando del core
   @import "core/responsive";      // mixins from(), to()
   @import "core/base";            // estilos base

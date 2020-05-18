@@ -10,22 +10,22 @@
 
   // Margin right
   .mr-#{$i} {
-    margin-right: $unit;
+    margin-right: $unit !important;
   }
 
   // Margin bottom
   .mb-#{$i} {
-    margin-bottom: $unit;
+    margin-bottom: $unit !important;
   }
 
   // Margin top
   .mt-#{$i} {
-    margin-top: $unit * -1;
+    margin-top: $unit * -1 !important;
   }
 
   // Margin left
   .ml-#{$i} {
-    margin-left: $unit;
+    margin-left: $unit !important;
   }
 }
 
